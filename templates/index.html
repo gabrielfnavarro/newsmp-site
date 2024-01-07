@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Age</title>
+
+    <!-- Adicione o link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+        video {
+            position: fixed;
+            z-index: -1;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        /* body {
+
+        } */
+
+        section {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Evita que a rotação do bloco cause rolagem vertical */
+        }
+
+        .overlay {
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            background: rgba(0, 0, 0, 0.5); /* Cor preta com opacidade de 50% */
+            z-index: 0;
+        }
+
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #722189;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.5s ease-out;
+            position: relative; /* Adicionado para posicionar o bloco relativo a este elemento */
+        }
+
+        p {
+            font-size: 1.5em;
+            animation: fadeInUp 2s ease-out;
+            color: aliceblue;
+        }
+
+        section .animate {
+            transition: 2s;
+        }
+
+        section .animate {
+            transform: translateX(-100%)
+        }
+
+        section.show-animate .animate {
+            transform: translateX(0);
+            animation: fadeInUp2 3s ease-out;
+        }
+
+
+        /* Alteração na cor do botão para #546d44 */
+        button.verde {
+            background-color: #722189;
+            border-color: #722189;
+            color: #fff; /* Cor do texto */
+            outline: none; /* Remove o contorno de foco */
+            box-shadow: none; /* Remove qualquer sombra ao focar */
+        }
+
+        button.verde:hover {
+            background-color: #4b0b5d;
+            border-color: #4b0b5d;
+        }
+
+        button.verde:active {
+            background-color: #340741;
+            border-color: #340741;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            opacity: 0.5;
+        }
+
+        footer p {
+            margin-bottom: 0; /* Remove a margem inferior padrão */
+        }
+
+        
+
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp2 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <audio id="my_audio" autoplay loop >
+        <source src="{{ url_for('static', filename='audio/villager.mp3')}}" type="audio/mp3">
+    </audio>
+    <video autoplay loop muted>
+        <source src="https://cdn.discordapp.com/attachments/1174389659443400734/1193003012642312282/finall.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+    <section class="sec-1 show-animate">
+    <div class="container animate">
+        <h1 class="display-4">New Age</h1>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, perspiciatis dolorum distinctio eum incidunt, eaque veritatis voluptas voluptates commodi, doloribus reprehenderit asperiores molestias consequuntur totam quas omnis modi consectetur rerum?</p>
+        <p class="lead">Players online: <span id="player_count" class="font-weight-bold">{{ player_count }}</span></p>
+        <button type="button" class="btn btn-primary btn-lg verde"> 🌎 Explore mais </button>
+    </div>
+
+    <!-- Botão Flutuante -->
+
+</section>
+<section class="sec-2">
+    <div class="container animate">
+        <h1 class="display-4">Modpack</h1>
+        <p class="lead">Esse é o modpack que será jogado. Ele já está upado no CurseForge e pode ser encontrado pesquisando pelo nome.<br><b>NEWSMP</b></p>
+        <a href="https://www.curseforge.com/minecraft/modpacks/newsmp-vanilla" target="_blank">
+        <button type="button" class="btn btn-primary btn-lg verde">Download</button>
+    </a>
+    </div>
+
+    <!-- Botão Flutuante -->
+
+</section>
+
+<section class="sec-3">
+    <div class="container animate">
+        <h1 class="display-4">New Age</h1>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, perspiciatis dolorum distinctio eum incidunt, eaque veritatis voluptas voluptates commodi, doloribus reprehenderit asperiores molestias consequuntur totam quas omnis modi consectetur rerum?</p>
+        <p class="lead">Players online: <span id="player_count" class="font-weight-bold">{{ player_count }}</span></p>
+        <button type="button" class="btn btn-primary btn-lg verde"> 🌎 Explore mais </button>
+    </div>
+
+    <!-- Botão Flutuante -->
+</section>
+<footer>
+    <p>Feito com 💜 por worstsins</p>
+</footer>
+<div class="floating-btn">
+    <button type="button" class="btn btn-primary btn-lg verde hover">Discord</button>
+    <button type="button" class="btn btn-primary verde btn-lg hover" onclick="toggleAudio()">🎵</button>
+</div>
+    <!-- Adicione os scripts do Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFP"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Adicione o script para controlar o áudio -->
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('my_audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+        <script src="{{url_for('static', filename='js/section.js')}}"></script>
+</body>
+</html>
