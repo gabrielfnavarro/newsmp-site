@@ -11,7 +11,6 @@ DISCORD_WEBHOOK_URL = 'https://ptb.discord.com/api/webhooks/1193912475620474961/
 def index():
     status = server.status()
     player_count = status.players.online
-    print(status.players.sample[0])
     return render_template('index.html', player_count=player_count)
 
 @app.route('/lores')
