@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Age - Equipe</title>
+    <meta property="og:title" content="NEW AGE">
+    <meta property="og:description" content="em desenvolvimento...">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1190153503914594345/1193584343008944159/new_png_so_new.png">
+    <link href="https://cdn.discordapp.com/attachments/1190153503914594345/1193584343008944159/new_png_so_new.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        /* Seu estilo existente */
+
+        /* Adicionei estilos para as categorias da equipe */
+        .equipe-section {
+            background-color: #343a40;
+            padding: 40px 0;
+            color: #fff;
+        }
+
+        .equipe-title {
+            color: #fff;
+        }
+
+        .equipe-card {
+            background-color: #495057;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Seção Equipe - CEO -->
+    <section class="equipe-section">
+        <div class="container">
+            <h2 class="equipe-title">Equipe do Servidor</h2>
+
+            <!-- Seção CEO -->
+            <h3>CEO</h3>
+            <div class="card-deck mb-4">
+                <div class="card equipe-card">
+                    <img src="avatar_ceo1.jpg" class="card-img-top" alt="Avatar do CEO">
+                    <div class="card-body">
+                        <h5 class="card-title">João CEO</h5>
+                        <p class="card-text">Nick do Discord: CEO#1234</p>
+                    </div>
+                </div>
+
+                <div class="card equipe-card">
+                    <img src="avatar_ceo2.jpg" class="card-img-top" alt="Avatar do CEO">
+                    <div class="card-body">
+                        <h5 class="card-title">Maria CEO</h5>
+                        <p class="card-text">Nick do Discord: CEO2#5678</p>
+                    </div>
+                </div>
+                <!-- Adicione mais cards para outros CEOs, se houver -->
+            </div>
+
+            <!-- Seção Gerente -->
+            <h3>Gerente</h3>
+            <div class="card-deck mb-4">
+                <!-- Adicione os cards dos gerentes aqui -->
+                <!-- Repita o mesmo padrão para outras seções -->
+            </div>
+
+            <!-- Adicione mais seções para Diretor, Coordenador, Moderadores e Ajudantes -->
+
+        </div>
+    </section>
+
+    <!-- ... (Seu conteúdo existente) ... -->
+
+    <!-- Adicione os scripts do Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFP"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Adicione o script para controlar o áudio -->
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('my_audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+    <script src="{{url_for('static', filename='js/section.js')}}"></script>
+</body>
+</html>
